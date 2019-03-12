@@ -1,0 +1,113 @@
+
+<div class="content">
+  <div class="title col-xl-9 col-lg-6 col-md-6 col-sm-6" drag-scroll><h1><span
+    class="lesson"></span> {{jsonObject.title}}</h1></div>
+  <app-header></app-header>
+
+  <hr class="col-11">
+  <style>
+    .pagin /deep/ .ngx-pagination li {
+      margin-right: 4rem;
+    }
+
+    .pagin /deep/ .ngx-pagination a, .pagin /deep/ li .ngx-pagination button{
+      background: transparent;
+      color: rgba(255,255,255,.4)
+    }
+
+    .pagin /deep/ .ngx-pagination .current{
+      background: transparent;
+      color: rgba(255,255,255,1)
+    }
+
+    .pagin /deep/ .ngx-pagination a :hover, .pagin /deep/ li .ngx-pagination button :hover{
+      background: transparent;
+      color: rgba(255,255,255,1)
+    }
+
+    .pagin /deep/ .ngx-pagination a :visited{
+      background: transparent;
+      color: rgba(255,255,255,1)
+    }
+
+    .pagin /deep/ .ngx-pagination ul {
+      margin: 0;
+      padding: 0;
+    }
+
+  </style>
+
+
+  <div class="cont col-12 col-md-12 col-sm-12 col-lg-11 col-xl-12">
+    <div class="cont col-10 col-md-12 col-sm-12 col-lg-10 col-xl-10">
+      <div class="opt-container" *ngFor="let page of jsonObject.page | paginate: {itemsPerPage:1, currentPage: p}">
+        <pagination-controls drag-scroll #nav class="pagin" (pageChange)="p = $event" directionLinks="false" maxSize="6"></pagination-controls>
+        <div class="content animated fadeIn" *ngFor="let items of page.item">
+        <div class="col-11">
+          <div class="play col-11" (click)="playAudio()">
+              <i id="v-up" class="material-icons" (click)="playAudio()">
+                  volume_up
+                  </i>
+                  <div class="play-but" id="startBtn" >
+                    <img src="{{items.image_file}}" alt="">
+                  </div>
+          </div>
+          <div class="text col-10">
+            <div id="missed"><h3>{{items.text}}</h3></div>
+            <div id="done"><h3>{{items.answer}}</h3></div>
+          </div>
+        <div class="images row col-11">
+          <div class="tr td" id="{{cond.text}}" (click)="correct(items.options.correct, cond.text )" *ngFor="let cond of items.options.item; let i = index">
+            {{cond.text}}
+          </div>
+        </div>
+      </div>
+        </div>
+        <circle-progress
+                    [percent]="(statDateObjects.correct*100)/statDateObjects.total"
+                    [titleFontSize]="20"
+                    [unitsFontSize] = "20"
+                    [showSubtitle] = "false"
+                    [outerStrokeColor]="'#008000'"
+                    [animationDuration]="300"
+                    [animation]="true"
+            ></circle-progress>
+    </div>
+    </div>
+    <div class="footer col-11">
+      <hr>
+      <p [innerHTML]='jsonObject.help'></p>
+    </div>
+    </div>
+    <div class="head">
+      <div class="col-xl-9 col-lg-7 col-md-7 col-sm-7"></div>
+      <div class="inhead col-xl-3 col-lg-5 col-md-5 col-sm-5">
+        <div class="row">
+          <div class="info col-2 col-md-2 col-sm-2">
+          </div>
+          <div class="help col-2 col-md-2 col-sm-2">
+          </div>
+          <div class="header-buttons col-2 col-md-2 col-sm-2">
+          </div>
+          <div class="line col-6 col-md-6 col-sm-6"></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="helpinfo" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Useful information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div [innerHTML]='jsonObject.info'></div>
+        </div>
+      </div>
+    </div>
+  </div>

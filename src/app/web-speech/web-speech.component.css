@@ -1,0 +1,316 @@
+h3{
+  color: white;
+}
+
+#final{
+  color: white;
+}
+
+button {
+  outline: none;
+  border: 2px solid #536dfe;
+}
+
+.speech-result-width {
+  width: 90%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.center {
+  padding: 10px;
+  text-align: center;
+}
+
+.mat-input-element:disabled {
+  color: rgba(255,255,255,.9);
+}
+
+.notification {
+  margin: 20px;
+  color: white;
+}
+
+
+.pagin{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  width: 85%;
+  margin-top: 1rem;
+}
+
+.pagin::-webkit-scrollbar {
+  display: none;
+}
+
+.pagin::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.pagin::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.content{
+  min-height: 100vh;
+}
+
+.cont{
+  padding: 0;
+  margin: 0;
+}
+
+hr{
+  margin: 1px;
+  padding: 0;
+  background: white;
+}
+
+.arrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#opt{
+  width: 100%;
+  height: 100%;
+}
+
+.contain{
+  margin-top: 5vh;
+  height: 40%;
+}
+
+.opt-vid{
+  padding: 0;
+  margin: 0;
+  margin-top: 6vh;
+  width: 100%;
+}
+
+.opt-word{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid white;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.word-col{
+  padding: 0;
+  display: flex;
+  opacity: .6;
+  cursor: pointer;
+  transition: ease-in-out .5s;
+}
+
+.word-col:hover{
+  opacity: 1;
+  background: rgba(0,0,0,.5);
+  transition: ease-in-out .5s;
+}
+
+.vertical{
+  width: 2px;
+  height: 100%;
+  background: rgba(255,255,255,.4);
+}
+
+@media only screen and (max-width:"736px"){
+  .opt-vid{
+
+  }
+}
+
+.img-text{
+  font-size: 2em;
+  text-align: center;
+  color: white;
+}
+
+#opt-img{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+#opt-vid-1, #opt-vid-2{
+  display: none;
+}
+
+.pagin{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  width: 85%;
+  margin-top: 1rem;
+  cursor: all-scroll;
+}
+
+.pagin::-webkit-scrollbar {
+  display: none;
+}
+
+.pagin::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.pagin::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+​
+.title::-webkit-scrollbar {
+  display: none;
+}
+
+.title::-webkit-scrollbar-track {
+  display: none;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.title::-webkit-scrollbar-thumb {
+  display: none;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.ngx-pagination{
+  display: flex;
+}
+
+.pagin /deep/ .ngx-pagination.current {
+  margin-right: 6rem;
+}
+
+@media only screen and (max-width: 812px){
+  .opt-vid{
+    height: 50vh;
+  }
+
+  @media only screen and (max-width: 736px) {
+    .opt-vid {
+      height: 40vh;
+    }
+  }
+}
+
+
+.footer{
+  margin: 0;
+  margin-top: 10vh;
+  padding: 0;
+}
+p, hr{
+  display: flex;
+  margin: auto;
+  bottom: 0;
+  font-family: 'Zurk', serif;
+  color: rgba(255,255,255,1);
+}
+
+hr{
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.title{
+  position: absolute;
+  width: 100%;
+  padding: 2px;
+  max-height: 16vh;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Zurk', sans-serif;
+  color: white;
+  margin: .5vh;
+}
+
+video{
+
+  border-radius: 5px;
+}
+
+video::-webkit-media-controls-panel {
+  max-width: 100%;
+  background: rgba(255,255,255,.85);
+}
+
+
+.lesson{
+  font-size: 0.8em;
+}
+
+.head{
+  display: flex;
+  margin-top: 10px;
+}
+
+.col-2{
+  padding: 0;
+}
+
+.header-buttons{
+  padding: 0;
+  align-self: flex-start;
+  color: white;
+  height: 15px;
+  border: none;
+  clear: both;
+  background: rgba(0,0,0,.3);
+  outline: none;
+}
+
+.colo{
+  background: rgba(0,0,0,.3);
+}
+
+.line{
+  background: rgba(0,0,0,.3);
+}
+.info{
+  background: rgba(0,0,0,.1);
+}
+
+.help{
+  background: rgba(0,0,0,.2);
+}
+
+.button-left{
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.1);
+}
+
+.close{
+  outline: none;
+}
+
+.close{
+  color: #444;
+}

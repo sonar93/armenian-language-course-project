@@ -1,0 +1,81 @@
+<div class="content">
+  <div class="title col-xl-9 col-lg-8 col-md-8 col-sm-8" drag-scroll><h1><span class="lesson"></span> {{jsonObject.title}}</h1></div>
+  <app-header></app-header>
+
+  <hr class="col-11">
+  <div class="cont col-12 col-md-12 col-sm-12 col-lg-11 col-xl-12">
+    <div class="cont col-10 col-md-12 col-sm-12 col-lg-11 col-xl-10">
+      <div class="img-container row animated fadeIn">
+        <div class="option col-10">
+          <div class="opt-vid" (click)="click()">
+            <video id="vid" width="100%" height="100%" poster="{{jsonObject.page.video_poster}}" src="{{jsonObject.page.video}}"  (play)="click()" controls preload="auto">
+              <track label="{{track.label}}" kind="subtitles" srclang="hy"  *ngFor="let track of jsonObject.page.track" src="{{track.vtt}}">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <circle-progress
+      [percent]="(statDateObjects.correct*100)/statDateObjects.total"
+      [titleFontSize]="20"
+      [unitsFontSize] = "20"
+      [showSubtitle] = "false"
+      [outerStrokeColor]="'#008000'"
+      [animationDuration]="300"
+      [animation]="true"
+    ></circle-progress>
+
+    <div class="footer col-12">
+      <hr>
+      <p [innerHTML]='jsonObject.help'></p>
+    </div>
+  </div>
+  <div class="head">
+    <div class="col-xl-9 col-lg-10 col-md-7 col-sm-7"></div>
+    <div class="inhead col-xl-3 col-lg-5 col-md-5 col-sm-5">
+      <div class="row">
+        <div class="info col-2 col-md-2 col-sm-2">
+        </div>
+        <div class="help col-2 col-md-2 col-sm-2">
+        </div>
+        <div class="header-buttons col-2 col-md-2 col-sm-2">
+        </div>
+        <div class="line col-6 col-md-6 col-sm-6"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="helpinfo" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Useful information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div [innerHTML]='jsonObject.info'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notes" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notes-title">Your Notes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-notes></app-notes>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,199 @@
+<app-header></app-header>
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12 view animated fadeIn">
+  <div class="lessons">
+    <h1>Alphabet</h1>
+    <div class="row items col-sm-12 col-md-12 col-lg-12 col-9 col-xl-9">
+      <ul class="les alph col-10">
+        <a class="col-sm-5 col-md-3 col-lg-3 col-xl-3 col-5" id="li-{{i+1}}" *ngFor="let item of menuLes; let i = index"
+           [routerLink]='[item.url]'>
+          <li>{{item.lesson}}
+            <br>
+            <div *ngIf="itemsStatisticsData.activityStat[item.id]; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <div class="circle">
+                <circle-progress
+                  [percent]="(itemsStatisticsData.activityStat[item.id].correct*100)/itemsStatisticsData.activityStat[item.id].total"
+                  [titleFontSize]="20"
+                  [unitsFontSize]="20"
+                  [showSubtitle]="false"
+                  [outerStrokeColor]="'#008000'"
+                  [animationDuration]="300"
+                  [animation]="true"
+                  [radius]="30"
+                  [responsive]="true"
+                ></circle-progress>
+
+              </div>
+<div class="tim row">
+              <span class="fa fa-hourglass-half" aria-hidden="true"></span>
+              <div class="col-7">
+                {{((itemsStatisticsData.activityStat[item.id].duration)/60).toFixed(0)}}m
+                {{(itemsStatisticsData.activityStat[item.id].duration%60).toFixed(0)}}s
+              </div>
+              <div *ngIf="itemsStatisticsData.activityStat[item.id].succeed_time == 1; then apricot"></div>
+
+              <ng-template #apricot>
+                <img class="col-3" style="height: 100%" src="assets/img/apricot.png">
+              </ng-template>
+
+              <!--div *ngIf="itemsStatisticsData.activityStat[item.id].succeed_time > 1; then medal"></div-->
+              
+</div>
+            </ng-template>
+            <ng-template #elseBlock>
+              <div class="circle">
+                <circle-progress
+                  [percent]="0"
+                  [titleFontSize]="20"
+                  [unitsFontSize]="20"
+                  [showSubtitle]="false"
+                  [outerStrokeColor]="'#008000'"
+                  [animationDuration]="300"
+                  [animation]="true"
+                  [radius]="30"
+                  [responsive]=""
+                ></circle-progress>
+              </div>
+            </ng-template>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <h1>Exercises</h1>
+    <div class="row items col-sm-12 col-md-12 col-lg-12 col-9 col-xl-9">
+      <ul class="ex col-10" id="ex-short">
+        <a class="col-sm-5 col-md-3 col-lg-3 col-xl-3 col-5" *ngFor="let item of menuExShort" routerLink={{item.url}}>
+           <li>{{item.exercise}}
+            <br>
+            <div *ngIf="itemsStatisticsData.activityStat[item.id]; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <div class="circle">
+                <circle-progress
+                  [percent]="(itemsStatisticsData.activityStat[item.id].correct*100)/itemsStatisticsData.activityStat[item.id].total"
+                  [titleFontSize]="20"
+                  [unitsFontSize]="20"
+                  [showSubtitle]="false"
+                  [outerStrokeColor]="'#008000'"
+                  [animationDuration]="300"
+                  [animation]="true"
+                  [radius]="30"
+                  [responsive]="true"
+                ></circle-progress>
+              </div>
+
+              <div class="tim row">
+                <span class="fa fa-hourglass-half" aria-hidden="true"></span>
+                <div class="col-7">
+                  {{((itemsStatisticsData.activityStat[item.id].duration)/60).toFixed(0)}}m
+                  {{(itemsStatisticsData.activityStat[item.id].duration%60).toFixed(0)}}s
+                </div>
+                <div *ngIf="itemsStatisticsData.activityStat[item.id].succeed_time == 1; then apricot"></div>
+
+                <ng-template #apricot>
+                  <img class="col-3" style="height: 100%" src="assets/img/apricot.png">
+                </ng-template>
+
+                <!--div *ngIf="itemsStatisticsData.activityStat[item.id].succeed_time > 1; then medal"></div-->
+                              </div>
+            </ng-template>
+            <ng-template #elseBlock>
+              <div class="circle">
+                <circle-progress
+                  [percent]="0"
+                  [titleFontSize]="20"
+                  [unitsFontSize]="20"
+                  [showSubtitle]="false"
+                  [outerStrokeColor]="'#008000'"
+                  [animationDuration]="300"
+                  [animation]="true"
+                  [radius]="30"
+                  [responsive]="true"
+                ></circle-progress>
+              </div>
+            </ng-template>
+
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="row items col-sm-12 col-md-12 col-lg-12 col-9 col-xl-9">
+        <ul class="ex col-10" id="ex">
+          <a class="col-sm-5 col-md-3 col-lg-3 col-xl-3 col-5" *ngFor="let item of menuEx" routerLink={{item.url}}>
+             <li>{{item.exercise}}
+              <br>
+              <div *ngIf="itemsStatisticsData.activityStat[item.id]; then thenBlock else elseBlock"></div>
+              <ng-template #thenBlock>
+                <div class="circle">
+                  <circle-progress
+                    [percent]="(itemsStatisticsData.activityStat[item.id].correct*100)/itemsStatisticsData.activityStat[item.id].total"
+                    [titleFontSize]="20"
+                    [unitsFontSize]="20"
+                    [showSubtitle]="false"
+                    [outerStrokeColor]="'#008000'"
+                    [animationDuration]="300"
+                    [animation]="true"
+                    [radius]="30"
+                    [responsive]="true"
+                  ></circle-progress>
+                </div>
+  
+                <div class="tim row">
+                  <span class="fa fa-hourglass-half" aria-hidden="true"></span>
+                  <div class="col-7">
+                    {{((itemsStatisticsData.activityStat[item.id].duration)/60).toFixed(0)}}m
+                    {{(itemsStatisticsData.activityStat[item.id].duration%60).toFixed(0)}}s
+                  </div>
+                  <div *ngIf="itemsStatisticsData.activityStat[item.id].succeed_time == 1; then apricot"></div>
+  
+                  <ng-template #apricot>
+                    <img class="col-3" style="height: 100%" src="assets/img/apricot.png">
+                  </ng-template>
+  
+                  <!--div *ngIf="itemsStatisticsData.activityStat[item.id].succeed_time > 1; then medal"></div-->
+                 
+                </div>
+              </ng-template>
+              <ng-template #elseBlock>
+                <div class="circle">
+                  <circle-progress
+                    [percent]="0"
+                    [titleFontSize]="20"
+                    [unitsFontSize]="20"
+                    [showSubtitle]="false"
+                    [outerStrokeColor]="'#008000'"
+                    [animationDuration]="300"
+                    [animation]="true"
+                    [radius]="30"
+                    [responsive]="true"
+                  ></circle-progress>
+                </div>
+              </ng-template>
+  
+            </li>
+          </a>
+        </ul>
+      </div>
+      <button (click) = "viewAll()" class="btn-add info order row" id="viewb" mat-raised-button><i id='expand' class="material-icons">
+          expand_more
+          </i> <span id="view">View More</span></button>
+  </div>
+</div>
+
+<app-footer-menu class="alphabet"></app-footer-menu>
+<router-outlet></router-outlet>
+
+<div class="modal fade" id="notes" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notes-title">Your Notes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-notes></app-notes>
+      </div>
+    </div>
+  </div>
+</div>

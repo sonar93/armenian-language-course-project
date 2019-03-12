@@ -1,0 +1,19 @@
+.mat-dialog-content{
+  width:100%;
+  font-size: 1.15em;
+  font-family: 'Century Gothic', serif !important;
+}
+
+button{
+  outline: none !important;
+}
+
+.btn-add{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  cursor: pointer;
+  border: none;
+  font-family: 'Century Gothic', serif;
+  font-size: 1.15em;
+}

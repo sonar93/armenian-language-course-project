@@ -1,0 +1,43 @@
+
+<div class="container add">
+  <input [(ngModel)]="title"  #mytitle type="text" class="form-control hide"  placeholder="Title">
+  <textarea [(ngModel)]="note" #mynote class="form-control hide" aria-label="With textarea" placeholder="You can add your notes here"></textarea>
+  <!--button (click) = "sortNotes()" class="btn-add info order" mat-raised-button> Order by Alphabet</button-->
+  <button (click) = "setNote()" class="btn-add info" mat-mini-fab color="warn"><mat-icon class="add-icon">
+    add
+  </mat-icon></button>
+</div>
+<div class="container-fluid" *ngFor = "let note of userNote; let i = index">
+  <br>
+  <div id = "{{i}}" class="card" [ngStyle] = "{'background': note.color}" >
+    <div class="card-header" (click)="check()">
+      <input  type="text" class="form-control form-title" [(ngModel)] = "note.title" placeholder="Title">
+    </div>
+    <div class="card-body" (click)="check()">
+      <textarea class="form-control form-add" aria-label="With textarea" [(ngModel)] = "note.note" placeholder="You can add your notes here"></textarea>
+    </div>
+    <div class="container btn-cont">
+      <button mat-icon-button (click)="saveNote(i)" id="check" class=" btn-add">
+        <mat-icon class="add-icon">
+          check
+        </mat-icon>
+      </button>
+      <button mat-icon-button class="btn-add coli">
+        <mat-icon class="add-icon" (click)="check()">
+          color_lens
+        </mat-icon>
+        <div id="btn-row" class="btn-row row">
+          <div *ngFor="let color of color">
+            <div class="col-icon" (click)="setColor(i, color)"  mat-icon-button> <mat-icon [ngStyle] = "{'color': color}">brightness_1</mat-icon></div>
+          </div>
+        </div>
+      </button>
+      <button mat-icon-button (click)="removeNote(i)" class=" btn-add">
+        <mat-icon class="add-icon">
+          delete
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+

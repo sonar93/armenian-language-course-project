@@ -1,0 +1,10 @@
+.contain{
+    height: 100vh;
+}
+
+.content{
+    display: flex;
+    height: 75%;
+    justify-content: space-between;
+    flex-direction: column;
+}

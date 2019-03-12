@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12 view animated fadeIn">
+  <div class="lessons">
+    <h1>Vocabulary</h1>
+    <div class="row items col-sm-12 col-md-12 col-lg-12 col-9 col-xl-9">
+      <ul class="les col-10">
+        <a class="col-sm-5 col-md-3 col-lg-3 col-xl-3 col-5" *ngFor="let item of menuLes; let i = index"
+           [routerLink]='[item.url]'>
+          <li>{{item.lesson}}</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<app-footer-menu class="alphabet"></app-footer-menu>
+<router-outlet></router-outlet>
+
+<div class="modal fade" id="notes" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notes-title">Your Notes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-notes></app-notes>
+      </div>
+    </div>
+  </div>
+</div>

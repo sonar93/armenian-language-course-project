@@ -1,0 +1,103 @@
+.footer{
+    height: auto;
+    justify-content: space-between;
+    align-self: flex-end;
+    margin-top: auto;
+}
+p, hr{
+    display: flex;
+    margin: auto;
+    bottom: 0;
+  letter-spacing: .07em;
+    font-family: 'Burner', serif;
+    color: rgba(255,255,255,1);
+}
+
+@media only screen and (max-width: 832px) {
+  p, hr{
+    font-size: .75em;
+  }
+}
+hr{
+    background: #fff;
+    margin: .4em 0;
+}
+
+.head{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+}
+
+.col-2{
+  padding: 0;
+}
+
+.header-buttons{
+  padding: 0;
+  align-content: flex-end;
+  color: white;
+  height: 15px;
+  border: none;
+  clear: both;
+  background: rgba(0,0,0,.3);
+  outline: none;
+}
+
+.inhead{
+  padding: 0;
+  align-content: flex-end;
+  color: white;
+  height: 100%;
+  border: none;
+  clear: both;
+  margin: 0;
+}
+
+.colo{
+  background: rgba(0,0,0,.3);
+}
+
+.line{
+  background: rgba(0,0,0,.3);
+}
+
+button{
+  margin: .9vh;
+  outline: none;
+  color: white;
+}
+
+.info{
+  background: rgba(0,0,0,.1);
+
+}
+
+.help{
+  background: rgba(0,0,0,.2);
+
+}
+
+#help{
+
+}
+
+.info-black{
+
+}
+
+.help-black{
+
+}
+
+#help-black{
+
+}
+
+.button-left{
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.1);
+}

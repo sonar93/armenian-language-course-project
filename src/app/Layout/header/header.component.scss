@@ -1,0 +1,66 @@
+$light-button: rgba(0,0,0,.1);
+$darken-button: rgba(0,0,0,.2);
+
+.head{
+    margin-top: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+    color: white;
+    justify-content: space-between;
+}
+
+.col-2{
+    padding: 0;
+}
+
+.header-buttons{
+    padding: 0;
+    align-content: flex-end;
+    color: white;
+    height: 100%;
+    border: none;
+    clear: both;
+    background: rgba(0,0,0,.3);
+    outline: none;
+}
+
+.inhead{
+    padding: 0;
+    align-content: flex-end;
+    color: white;
+    height: 100%;
+    border: none;
+    clear: both;
+    margin: 0;
+}
+
+.colo{
+    background: rgba(0,0,0,.3);
+}
+
+.line{
+    background: rgba(0,0,0,.3);
+}
+
+button{
+    margin: .9vh;
+    outline: none;
+    color: white;
+}
+
+.button-left{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.1);
+}
+
+.info{
+    background: $light-button;
+}
+
+.help{
+    background: $darken-button;
+}

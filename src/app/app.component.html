@@ -1,0 +1,97 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<section class="container-fluid">
+  <div class="row">
+    <div class="example-container col-3 col-lg-3">
+      <div id="side" class="example-sidenav animated fadeInLeft">
+          <a class="goBack" href="javascript:void(0)" (click)="goBack()" mat-icon-button>
+              <i class="material-icons" style = 'margin-left: 7.5px'>
+                  arrow_back_round
+              </i>
+          </a>
+        <div class="avc-logo"><img src="./assets/img/logo.png" alt=""></div>
+        <ul class="menu-items">
+            <li><a routerLink = "/" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }">WELCOME</a></li>
+          <li *ngFor="let title of menu; let i = index"><a routerLink = {{title.url}} routerLinkActive="active" >{{title.title}}</a>
+          </li>
+        </ul>
+        <!--div class="copy"><p>Armenian General Bevelopement Union</p>
+        <p> Հայկական Բարեգործական Ընդհանուր Միություն</p></div-->
+      </div>
+    </div>
+  <div class='mobile-left'>
+    <button class="menu-button" (click)="menuBut()" mat-icon-button ><mat-icon>menu</mat-icon></button>
+    <a class="goBack" href="javascript:void(0)" (click)="goBack()" mat-icon-button>
+        <i class="material-icons" style = 'margin-left: 7.5px'>
+            arrow_back_round
+        </i>
+    </a>
+  </div>
+    <div class="example-container-mobile col-sm-12 col-md-12 col-12 row" id="side-1" >
+      <div id="side" class="example-sidenav animated fadeInLeft">
+        <div class="avc-logo"><img src="./assets/img/logo.png" alt=""></div>
+        <ul class="menu-items">
+            <li (click)="menuBut()"><a routerLink = "/" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }">WELCOME</a></li>
+          <li *ngFor="let title of menu"><a routerLink = {{title.url}} routerLinkActive="active"  >{{title.title}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="darken animated fadeIn" (click)="menuBut()">
+      </div>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 col-xl-3 col-3"></div>
+    <div class="col-9 col-lg-9 col-sm-11">
+      <div class="routeContainer animated fadeIn" [@routeAnimation]="getDepth(myOutlet)">
+        <router-outlet #myOutlet="outlet"></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="colorPicker" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CHOOSE YOUR THEME</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-switcher></app-switcher>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="helpinfo" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Useful information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+                  <mat-icon>close</mat-icon>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div ></div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="notes" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notes-title">Your Notes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-notes></app-notes>
+      </div>
+    </div>
+  </div>
+</div>

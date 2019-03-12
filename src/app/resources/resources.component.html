@@ -1,0 +1,44 @@
+<div class="title col-xl-9 col-lg-6 col-md-6 col-sm-6" drag-scroll><h1><span
+  class="lesson"></span> {{jsonObject.title}}</h1></div>
+<app-header></app-header>
+<hr class="col-11">
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12 view">
+  <div class="lessons">
+    <div class="row items col-sm-12 col-md-12 col-lg-12 col-9 col-xl-9">
+      <ul class="les col-12">
+        <a class="col-sm-12 col-md-3 col-lg-3 col-xl-3 col-12" *ngFor="let item of jsonObject.page; let i = index" href="{{item.url}}" download="{{item.title}}">
+          <li id="i">
+              <div class="text row">
+                <img class="col-4" style="height:100%;  margin: 0; margin-bottom: 10px; justify-content: flex-start; padding: 0" src="{{item.icon}}" alt="">
+                 <br>
+                <div class="col-5"></div>
+               <i class="material-icons col-3 icon">
+                  cloud_download
+                </i>
+
+              </div>
+              <p>{{item.title}}</p>
+
+          </li></a>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="notes" tabindex="-1" role="dialog" aria-labelledby="help" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notes-title">Your Notes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-notes></app-notes>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-menu class="alphabet"></app-footer-menu>
+<router-outlet></router-outlet>

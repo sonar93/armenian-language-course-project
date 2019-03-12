@@ -1,0 +1,146 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+
+@font-face {
+    font-family: "Zurk";
+    src: url("assets/fonts/Zurk.woff");
+    }
+
+@font-face {
+    font-family: "ZurkBC";
+    src: url("assets/fonts/ZurkBC.woff");
+    }
+
+@font-face {
+  font-family: "Burner";
+  src: url("assets/fonts/timeburnerbold.woff");
+}
+
+
+
+$green: linear-gradient(135deg, rgba(4,66,120,1) 0%, rgba(84,171,249,1) 100%); /* ff3.6+ */
+
+*{
+    clear: both;
+    margin: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    outline: none;
+    font-family: 'Zurk', sans-serif;
+}
+
+body{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Zurk', sans-serif;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  pointer-events: none;
+}
+/* high-performance display:none; helper */
+.gu-hide {
+  left: -9999px !important;
+}
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+.bold-text{
+  font-weight: bold;
+}
+
+.red-text{
+  $red: red !important;
+}
+
+.green{
+  background: $green;
+    transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  overflow-x: hidden;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0,0,0,0);
+}
+
+.my-contain{
+    width: 100vw;
+    clear: both;
+    margin: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+router-outlet{
+    display: none;
+}
+
+.routeContainer {
+    position: relative;
+}
+
+.routeContainer>* {
+    display: block;
+
+}
+
+.alert{
+    display: none;
+}
+
+@media only screen and (max-width: 420px) {
+    .main{
+        display: none;
+    }
+    .alert{
+        display: flex;
+        height: 100vh;
+        color: white;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.ngx-pagination{
+  display: flex;
+}
+
+
+
