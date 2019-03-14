@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Tip, Status} from './Models/tip';
-import {TipsComponent} from './shared/tips/tips.component';
+import {Tip, Status} from '../Models/tip';
+import {TipsComponent} from './tips/tips.component';
 import {MatDialog} from '@angular/material';
 import 'rxjs/add/operator/map';
 

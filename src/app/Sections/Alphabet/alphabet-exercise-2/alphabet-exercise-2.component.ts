@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { Data } from '../../data.service';
+import { Data } from '../../../shared/data.service';
 
 @Component({
   selector: 'app-alphabet-exercise-2',

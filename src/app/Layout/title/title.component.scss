@@ -17,6 +17,12 @@
 
 .img-col{
   width: 100%;
+  opacity: 1;
+  transition: fade-in 0.2s;
+  :hover{
+    opacity: .8;
+    transition: fade-in 0.2s;
+  }
 }
 
 .youtube {
@@ -42,6 +48,11 @@
     width: 100%;
     height: auto;
     clear: both;
+    transition: fade-in 0.2s;
+    :hover{
+      opacity: 0.8;
+      transition: fade-in 0.2s;
+    }
   }
 }
 

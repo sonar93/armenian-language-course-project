@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { Data } from "../../data.service";
-import { DragulaService } from "ng2-dragula";
+import { Component, OnInit } from '@angular/core';
+import { Data } from '../../../shared/data.service';
+import { DragulaService } from 'ng2-dragula';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
-  selector: "app-dialogue-exercise-2",
-  templateUrl: "./dialogue-exercise-2.component.html",
-  styleUrls: ["./dialogue-exercise-2.component.scss"]
+  selector: 'app-dialogue-exercise-2',
+  templateUrl: './dialogue-exercise-2.component.html',
+  styleUrls: ['./dialogue-exercise-2.component.scss']
 })
 export class DialogueExercise2Component implements OnInit {
   msg = '';
@@ -26,12 +26,12 @@ export class DialogueExercise2Component implements OnInit {
   wrongAudio: any = './assets/wrong.mp3';
 
   submits_count: any;
-  course_id: string = "AL_102";
-  lesson_id: string = "Lesson_1";
-  unit_name: string = "AL_102-Lesson_1";
-  item_name: string = "22";
-  type: string = "exercise";
-  
+  course_id = 'AL_102';
+  lesson_id = 'Lesson_1';
+  unit_name = 'AL_102-Lesson_1';
+  item_name = '22';
+  type = 'exercise';
+
  /* jsonTipsObject: any = {
     tips: []
   };
@@ -61,15 +61,15 @@ export class DialogueExercise2Component implements OnInit {
         //console.log(response);
       });
     return;
-  } 
+  }
   */
 
   pageStatusData: any = {
-    "submits_count": 0,
-    "pageNumber": 0,
-    "correct": 0,
-    "incorrect": 0,
-    "total": 0
+    'submits_count': 0,
+    'pageNumber': 0,
+    'correct': 0,
+    'incorrect': 0,
+    'total': 0
   };
 
   constructor(private dragula: DragulaService, private jsonData: Data) {
@@ -86,13 +86,13 @@ export class DialogueExercise2Component implements OnInit {
     this.pageStatusData.total = this.jsonObject.page.length;
 
     this.setStatistics();
-    for (let i=0; i<this.pageList.length; i++) {
+    for (let i = 0; i < this.pageList.length; i++) {
       this.pageList[i] = true;
     }
 
-    let body = document.getElementById('body');
+    const body = document.getElementById('body');
     this.subs.add(this.dragula.drag().subscribe((value) => {
-      body.style.overflowY = `hidden`
+      body.style.overflowY = `hidden`;
     }));
 
     this.subs.add(this.dragula.drop().subscribe(value => {
@@ -100,7 +100,7 @@ export class DialogueExercise2Component implements OnInit {
       this.correct(this.pageIndex, this.playedLetter);
 
       setTimeout(() => {
-        this.msg = "";
+        this.msg = '';
       }, 1000);
     }));
   }
@@ -112,9 +112,9 @@ export class DialogueExercise2Component implements OnInit {
   }
 
   getData() {
-    let course_id = 'AL_102';
-    let lesson_id = 'Lesson_1';
-    let item_id = '22';
+    const course_id = 'AL_102';
+    const lesson_id = 'Lesson_1';
+    const item_id = '22';
 
     this.jsonData.getJson(course_id, lesson_id, item_id).subscribe(
       response => this.jsonObject = response);
@@ -127,97 +127,97 @@ export class DialogueExercise2Component implements OnInit {
     return;
   }
   jsonObject: any = {
-    title: "Exercise 2: Build sentences",
-    help: "<p>Click to listen and rearrange the words to build sentences.</p>",
+    title: 'Exercise 2: Build sentences',
+    help: '<p>Click to listen and rearrange the words to build sentences.</p>',
     info:
-      "<p>This activity is specifically designed to teach word order when greeting or introducing is necessary. To complete this activity try to focus on the meaning of new words and on word order in the dialogue section.<br></p>",
+      '<p>This activity is specifically designed to teach word order when greeting or introducing is necessary. To complete this activity try to focus on the meaning of new words and on word order in the dialogue section.<br></p>',
     page: [
       {
         text: [
-          { part: "Բարև, " },
-          { part: "Արմեն " },
-          { part: "անունը " },
-          { part: "իմ " },
-          { part: "է:" }
+          { part: 'Բարև, ' },
+          { part: 'Արմեն ' },
+          { part: 'անունը ' },
+          { part: 'իմ ' },
+          { part: 'է:' }
         ],
         image:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/1.jpg",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/1.jpg',
         audio_mp3:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/1.mp3",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/1.mp3',
         audios:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3",
-        answer: "Բարև, իմ անունը Արմեն է:"
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3',
+        answer: 'Բարև, իմ անունը Արմեն է:'
       },
       {
         text: [
-          { part: "եմ " },
-          { part: "ուրախ " },
-          { part: "հետ " },
-          { part: "Շատ " },
-          { part: "ծանոթանալ:" },
-          { part: "Ձեզ " }
+          { part: 'եմ ' },
+          { part: 'ուրախ ' },
+          { part: 'հետ ' },
+          { part: 'Շատ ' },
+          { part: 'ծանոթանալ:' },
+          { part: 'Ձեզ ' }
         ],
         image:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/2.jpg",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/2.jpg',
         audio_mp3:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/2.mp3",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/2.mp3',
         audios:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3",
-        answer: "Շատ ուրախ եմ Ձեզ հետ ծանոթանալ:"
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3',
+        answer: 'Շատ ուրախ եմ Ձեզ հետ ծանոթանալ:'
       },
       {
         text: [
-          { part: "եք։" },
-          { part: "ինչպես " },
-          { part: "Հաճելի " },
-          { part: "ծանոթանալ, " },
-          { part: "է " },
-          { part: "հետ " },
-          { part: "Ձեզ " }
+          { part: 'եք։' },
+          { part: 'ինչպես ' },
+          { part: 'Հաճելի ' },
+          { part: 'ծանոթանալ, ' },
+          { part: 'է ' },
+          { part: 'հետ ' },
+          { part: 'Ձեզ ' }
         ],
         image:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/3.jpg",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/3.jpg',
         audio_mp3:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/3.mp3",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/3.mp3',
         audios:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3",
-        answer: "Հաճելի է Ձեզ հետ ծանոթանալ, ինչպես եք։"
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3',
+        answer: 'Հաճելի է Ձեզ հետ ծանոթանալ, ինչպես եք։'
       },
       {
         text: [
-          { part: "դո՞ւք:" },
-          { part: "Լավ " },
-          { part: "շնորհակալություն, " },
-          { part: "եմ," },
-          { part: "իսկ " }
+          { part: 'դո՞ւք:' },
+          { part: 'Լավ ' },
+          { part: 'շնորհակալություն, ' },
+          { part: 'եմ,' },
+          { part: 'իսկ ' }
         ],
         image:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/4.jpg",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/4.jpg',
         audio_mp3:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/4.mp3",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/4.mp3',
         audios:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3",
-        answer: "Լավ եմ,շնորհակալություն, իսկ դո՞ւք:"
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3',
+        answer: 'Լավ եմ,շնորհակալություն, իսկ դո՞ւք:'
       },
       {
         text: [
-          { part: "լավ " },
-          { part: "նույնպես " },
-          { part: "Ես " },
-          { part: "եմ:" }
+          { part: 'լավ ' },
+          { part: 'նույնպես ' },
+          { part: 'Ես ' },
+          { part: 'եմ:' }
         ],
         image:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/5.jpg",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/images/5.jpg',
         audio_mp3:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/5.mp3",
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/5.mp3',
         audios:
-          "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3",
-        answer: "Ես նույնպես լավ եմ:"
+          'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/22/audio/ok.mp3',
+        answer: 'Ես նույնպես լավ եմ:'
       }
     ]
   };
 
-  statDateObjects: any = {"correct": 0, "incorrect": 0, "total": this.jsonObject.page.length};
+  statDateObjects: any = {'correct': 0, 'incorrect': 0, 'total': this.jsonObject.page.length};
   pageList: boolean[] = new Array(this.statDateObjects.total);
 
   myindex() {
@@ -225,7 +225,7 @@ export class DialogueExercise2Component implements OnInit {
     // let sl = str.slice(-24);
     // console.log(str);
     str = str.trim();
-    let realindex = str.split('\n');
+    const realindex = str.split('\n');
     //this.realindex = sl.charAt(0);
     this.index = parseInt(realindex[1]) - 1;
     //console.log(this.index)
@@ -249,14 +249,14 @@ export class DialogueExercise2Component implements OnInit {
   correct(pageIndex, id) {
     this.myindex();
     this.playedLetter = this.mustPlay[this.index].answer;
-    let right = new Audio(this.rightAudio);
-    let wrong = new Audio(this.wrongAudio);
+    const right = new Audio(this.rightAudio);
+    const wrong = new Audio(this.wrongAudio);
     this.divElement = document.getElementById('result').children;
     let result = '';
     for (let i = 0; i < this.divElement.length; i++) {
       result += this.divElement[i].textContent;
     }
-    let listItem = document.getElementsByClassName('item');
+    const listItem = document.getElementsByClassName('item');
 
    // console.log(result);
    // console.log(this.playedLetter.trim());

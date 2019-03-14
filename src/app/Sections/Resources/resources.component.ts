@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Data} from '../../shared/data.service';
 
 @Component({
   selector: 'app-resources',
@@ -35,8 +36,19 @@ export class ResourcesComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(private jsonData: Data) { }
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    const course_id = 'AL_102';
+    const lesson_id = 'Lesson_1';
+    const item_id = '29';
+    this.jsonData
+      .getJson(course_id, lesson_id, item_id)
+      .subscribe(response => (this.jsonObject = response));
+    return this.jsonObject;
   }
 
 }

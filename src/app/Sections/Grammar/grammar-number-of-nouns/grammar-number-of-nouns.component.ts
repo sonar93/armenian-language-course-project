@@ -1,17 +1,10 @@
-import { HttpModule } from "@angular/http";
-import { HttpClient } from "@angular/common/http";
-import { Data } from "../../data.service";
-import { Component, OnInit, NgModule } from "@angular/core";
-import { Response } from "@angular/http";
-import { ViewChild } from "@angular/core";
-import { DragScroll, DragScrollModule } from "ngx-drag-scroll";
-import { NgbPagination } from "@ng-bootstrap/ng-bootstrap";
-import { NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+import { Data } from '../../../shared/data.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-grammar-number-of-nouns",
-  templateUrl: "./grammar-number-of-nouns.component.html",
-  styleUrls: ["./grammar-number-of-nouns.component.scss"]
+  selector: 'app-grammar-number-of-nouns',
+  templateUrl: './grammar-number-of-nouns.component.html',
+  styleUrls: ['./grammar-number-of-nouns.component.scss']
 })
 export class GrammarNumberOfNounsComponent implements OnInit {
   constructor(private jsonData: Data) {}
@@ -28,23 +21,23 @@ export class GrammarNumberOfNounsComponent implements OnInit {
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1.png",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1.png',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/1_1.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/1_1.mp3'
               },
-              text: "Ես",
-              text_trans: "/Yes/ I"
+              text: 'Ես',
+              text_trans: '/Yes/ I'
             },
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1_1.jpg",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1_1.jpg',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/1.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/1.mp3'
               },
               text:
                 '<p><font color="#e82a1f">Ես</font> ուսանող <font color="#e82a1f">եմ</font>:</p>',
-              text_trans: "<p>/yes usanogh em/&nbsp;</p><p>I am a student.</p>"
+              text_trans: '<p>/yes usanogh em/&nbsp;</p><p>I am a student.</p>'
             }
           ]
         }
@@ -55,24 +48,24 @@ export class GrammarNumberOfNounsComponent implements OnInit {
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2.png",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2.png',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/2_1.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/2_1.mp3'
               },
-              text: "Դու",
-              text_trans: "/Du/ You"
+              text: 'Դու',
+              text_trans: '/Du/ You'
             },
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1_2.jpg",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1_2.jpg',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/2.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/2.mp3'
               },
               text:
                 '<p><font color="#e82a1f">Դու</font> ուսանող <font color="#e82a1f">ես</font>:</p>',
               text_trans:
-                "<p>/du usanogh es/&nbsp;</p><p>You are a student.</p>"
+                '<p>/du usanogh es/&nbsp;</p><p>You are a student.</p>'
             }
           ]
         }
@@ -83,24 +76,24 @@ export class GrammarNumberOfNounsComponent implements OnInit {
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/3.png",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/3.png',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/3_1.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/3_1.mp3'
               },
-              text: "Նա",
-              text_trans: "/Na/ He/She"
+              text: 'Նա',
+              text_trans: '/Na/ He/She'
             },
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1_3.jpg",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/1_3.jpg',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/3.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/3.mp3'
               },
               text:
                 '<p><font color="#e82a1f">Նա</font> ուսանող <font color="#e82a1f">է</font>:</p>',
               text_trans:
-                "<p>/na usanohgh e/&nbsp;</p><p>He/she is a student.</p>"
+                '<p>/na usanohgh e/&nbsp;</p><p>He/she is a student.</p>'
             }
           ]
         }
@@ -111,23 +104,23 @@ export class GrammarNumberOfNounsComponent implements OnInit {
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/4.png",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/4.png',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/4_1.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/4_1.mp3'
               },
-              text: "Մենք",
-              text_trans: "/Menk/ We"
+              text: 'Մենք',
+              text_trans: '/Menk/ We'
             },
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2_1.jpg",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2_1.jpg',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/4.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/4.mp3'
               },
               text:
                 '<p><font color="#e82a1f">Մենք</font> ուսանող <font color="#e82a1f">ենք</font>:</p>',
-              text_trans: "<p>/menk usanogh enk/</p><p> We are students.</p>"
+              text_trans: '<p>/menk usanogh enk/</p><p> We are students.</p>'
             }
           ]
         }
@@ -138,24 +131,24 @@ export class GrammarNumberOfNounsComponent implements OnInit {
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/5.png",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/5.png',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/5_1.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/5_1.mp3'
               },
-              text: "Դուք",
-              text_trans: "/Duk/ You"
+              text: 'Դուք',
+              text_trans: '/Duk/ You'
             },
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2_2.jpg",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2_2.jpg',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/5.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/5.mp3'
               },
               text:
                 '<p><font color="#e82a1f">Դուք</font> ուսանող <font color="#e82a1f">եք</font>:</p>',
               text_trans:
-                "<p>/duk usanogh ek/&nbsp;</p><p>You are students.</p>"
+                '<p>/duk usanogh ek/&nbsp;</p><p>You are students.</p>'
             }
           ]
         }
@@ -166,24 +159,24 @@ export class GrammarNumberOfNounsComponent implements OnInit {
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/6.png",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/6.png',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/6_1.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/6_1.mp3'
               },
-              text: "Նրանք",
-              text_trans: "/Nrank/ They"
+              text: 'Նրանք',
+              text_trans: '/Nrank/ They'
             },
             {
               image: {
                 file:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2_3.jpg",
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/images/2_3.jpg',
                 audio:
-                  "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/6.mp3"
+                  'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/12/audio/6.mp3'
               },
               text:
                 '<p><font color="#e82a1f">Նրանք</font> ուսանող <font color="#e82a1f">են</font>:</p>',
               text_trans:
-                "<p>/nrank usanogh en/&nbsp;</p><p>They are students.</p>"
+                '<p>/nrank usanogh en/&nbsp;</p><p>They are students.</p>'
             }
           ]
         }
@@ -192,12 +185,12 @@ export class GrammarNumberOfNounsComponent implements OnInit {
   };
 
   submits_count: any;
-  course_id: string = "AL_102";
-  lesson_id: string = "Lesson_1";
-  unit_name: string = "AL_102-Lesson_1";
-  item_name: string = "12";
-  type: string = "lesson";
-  p: number = 1;
+  course_id = 'AL_102';
+  lesson_id = 'Lesson_1';
+  unit_name = 'AL_102-Lesson_1';
+  item_name = '12';
+  type = 'lesson';
+  p = 1;
   audio: any;
   index: any;
   audioTag: any;
@@ -247,7 +240,7 @@ export class GrammarNumberOfNounsComponent implements OnInit {
   pageList: any[] = new Array(this.statDateObjects.total);
 
   ngOnInit() {
-    this.audioTag = document.createElement("audio");
+    this.audioTag = document.createElement('audio');
     this.getData();
     //this.getTipsData();
     //this.getTipIds();
@@ -275,9 +268,9 @@ export class GrammarNumberOfNounsComponent implements OnInit {
   }
 
   getData() {
-    let course_id = "AL_102";
-    let lesson_id = "Lesson_1";
-    let item_id = "12";
+    const course_id = 'AL_102';
+    const lesson_id = 'Lesson_1';
+    const item_id = '12';
     // console.log("course_id =" + course_id);
     // console.log('kuku');
     //  this.jsonData.getJson(course_id,lesson_id,item_id).subscribe(responseAlp => this.alphabet = responseAlp);
@@ -290,14 +283,14 @@ export class GrammarNumberOfNounsComponent implements OnInit {
   }
 
   myindex() {
-    let str = document.getElementsByClassName("current")[0].textContent;
+    let str = document.getElementsByClassName('current')[0].textContent;
     str = str.trim();
-    const realindex = str.split("\n");
+    const realindex = str.split('\n');
     this.index = parseInt(realindex[1]) - 1;
   }
 
   click(audio, id) {
-    this.audioTag.setAttribute("src", audio.audio);
+    this.audioTag.setAttribute('src', audio.audio);
     this.myindex();
     this.audioTag.load();
     this.audioTag.play();
@@ -323,18 +316,18 @@ export class GrammarNumberOfNounsComponent implements OnInit {
   textHover(i) {
     let text;
     let trans;
-    text = document.getElementById("img-text_" + i);
-    trans = document.getElementById("img-trans_" + i);
-    text.style.display = "none";
-    trans.style.display = "block";
+    text = document.getElementById('img-text_' + i);
+    trans = document.getElementById('img-trans_' + i);
+    text.style.display = 'none';
+    trans.style.display = 'block';
   }
 
   transHover(i) {
     let text;
     let trans;
-    text = document.getElementById("img-text_" + i);
-    trans = document.getElementById("img-trans_" + i);
-    text.style.display = "block";
-    trans.style.display = "none";
+    text = document.getElementById('img-text_' + i);
+    trans = document.getElementById('img-trans_' + i);
+    text.style.display = 'block';
+    trans.style.display = 'none';
   }
 }

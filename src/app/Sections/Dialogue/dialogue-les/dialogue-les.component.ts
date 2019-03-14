@@ -1,22 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { Data } from "../../data.service";
-import { HttpModule } from "@angular/http";
-import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
+import { Data } from '../../../shared/data.service';
 
 @Component({
-  selector: "app-dialogue-les",
-  templateUrl: "./dialogue-les.component.html",
-  styleUrls: ["./dialogue-les.component.scss"]
+  selector: 'app-dialogue-les',
+  templateUrl: './dialogue-les.component.html',
+  styleUrls: ['./dialogue-les.component.scss']
 })
 export class DialogueLesComponent implements OnInit {
   constructor(private jsonData: Data) {}
 
   submits_count: any;
-  course_id: string = "AL_102";
-  lesson_id: string = "Lesson_1";
-  unit_name: string = "AL_102-Lesson_1";
-  item_name: string = "20";
-  type: string = "lesson";
+  course_id = 'AL_102';
+  lesson_id = 'Lesson_1';
+  unit_name = 'AL_102-Lesson_1';
+  item_name = '20';
+  type = 'lesson';
   audioTag: any;
   index: any;
 
@@ -29,26 +27,26 @@ export class DialogueLesComponent implements OnInit {
   };
 
   jsonObject: any = {
-    title: "Dialogue",
+    title: 'Dialogue',
     help:
-      "<p>Listen to the dialogue&nbsp;and repeat it to improve your Armenian pronunciation.</p>",
+      '<p>Listen to the dialogue&nbsp;and repeat it to improve your Armenian pronunciation.</p>',
     info:
-      "<p>The use of dialogues will help you develop your listening and speaking skills. In this activity you will practice new words and phrases for greeting and introduction. <br></p>",
+      '<p>The use of dialogues will help you develop your listening and speaking skills. In this activity you will practice new words and phrases for greeting and introduction. <br></p>',
     page: {
       video:
-        "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/video/1_.mp4",
+        'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/video/1_.mp4',
       video_poster:
-        "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/images/video.png",
+        'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/images/video.png',
       track: [
         {
           vtt:
-            "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/vtt/dialogue1_subtitles_en.vtt",
-          label: "English"
+            'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/vtt/dialogue1_subtitles_en.vtt',
+          label: 'English'
         },
         {
           vtt:
-            "https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/vtt/dialogue1_subtitles_trans.vtt",
-          label: "Transliteration"
+            'https://www.avc-agbu.org/edu/avc_json_editor/AL_102/Lesson_1/20/vtt/dialogue1_subtitles_trans.vtt',
+          label: 'Transliteration'
         }
       ]
     }
@@ -101,7 +99,7 @@ export class DialogueLesComponent implements OnInit {
   }
 
   click() {
-    this.audioTag = document.getElementById("vid");
+    this.audioTag = document.getElementById('vid');
     this.audioTag.play();
     this.pageStatusData.submits_count++;
     this.pageStatusData.submits_count++;
@@ -139,9 +137,9 @@ export class DialogueLesComponent implements OnInit {
     return;
   }
   getData() {
-    let course_id = "AL_102";
-    let lesson_id = "Lesson_1";
-    let item_id = "20";
+    const course_id = 'AL_102';
+    const lesson_id = 'Lesson_1';
+    const item_id = '20';
     this.jsonData
       .getJson(course_id, lesson_id, item_id)
       .subscribe(response => (this.jsonObject = response));

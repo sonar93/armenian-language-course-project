@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Data} from '../../data.service';
+import {Data} from '../../../shared/data.service';
 import {MatDialog} from '@angular/material';
-import {TipsComponent} from '../../shared/tips/tips.component';
+import {TipsComponent} from '../../../shared/tips/tips.component';
 declare var $;
 
 @Component({

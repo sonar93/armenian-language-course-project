@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import {Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import {trigger, transition, group, query, style, animate } from '@angular/animations';
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef} from '@angular/core';
 import {Location} from '@angular/common';
-import {data} from './data.service';
+import {Data} from './shared/data.service';
 
 @Component({
   selector: 'app-root',
@@ -71,7 +69,7 @@ import {data} from './data.service';
 })
 export class AppComponent {
 
-  constructor(private route: ActivatedRoute, private jsonData: data, private location: Location) {
+  constructor(private route: ActivatedRoute, private jsonData: Data, private location: Location) {
   }
 
   goBack() {
@@ -84,20 +82,20 @@ export class AppComponent {
   menu: any[] = [
     {
       title : "ALPHABET",
-      url: "chapter/Alphabet",
+      url: "Chapters/Alphabet",
     },
     {
       title : "GRAMMAR",
-      url: "chapter/Grammar",
+      url: "Chapters/Grammar",
 
     },
     {
       title : "THEMATIC WORDS",
-      url: "chapter/Thematic",
+      url: "Chapters/Thematic",
     },
     {
       title : "DIALOGUES",
-      url: "chapter/Dialogue",
+      url: "Chapters/Dialogue",
     },
     {
       title : "VOCABULARY",

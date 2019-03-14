@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, NgModule } from '@angular/core';
-import { Data } from '../../data.service';
+import { Data } from '../../../shared/data.service';
 
 
 @Component({

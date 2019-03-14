@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Data } from '../../data.service';
-import { DragulaService } from "ng2-dragula";
+import { Data } from '../../../shared/data.service';
+import { DragulaService } from 'ng2-dragula';
 import { Subscription} from 'rxjs/Subscription';
 
 @Component({
@@ -27,21 +27,21 @@ export class DialoguesExercise1Component implements OnInit {
   currentSound: any = 0;
   playedLetter = '';
   mustPlay: any;
-  p:any;
+  p: any;
   notPlay: any;
   audio: any;
   audioObj: any;
-  index: number = 0;
+  index = 0;
   itemsArray: any = [];
   rightAudio: any = './assets/right.mp3';
   wrongAudio: any = './assets/wrong.mp3';
 
   submits_count: any;
-  course_id: string = "AL_102";
-  lesson_id: string = "Lesson_1";
-  unit_name: string = "AL_102-Lesson_1";
-  item_name: string = "21";
-  type: string = "exercise";
+  course_id = 'AL_102';
+  lesson_id = 'Lesson_1';
+  unit_name = 'AL_102-Lesson_1';
+  item_name = '21';
+  type = 'exercise';
 
   /*jsonTipsObject: any = {
     tips: []
@@ -75,11 +75,11 @@ export class DialoguesExercise1Component implements OnInit {
   }
 */
   pageStatusData: any = {
-    "submits_count": 0,
-    "pageNumber": 0,
-    "correct": 0,
-    "incorrect": 0,
-    "total": 0
+    'submits_count': 0,
+    'pageNumber': 0,
+    'correct': 0,
+    'incorrect': 0,
+    'total': 0
   };
 
   constructor(private dragula: DragulaService, private jsonData: Data) {
@@ -100,9 +100,9 @@ export class DialoguesExercise1Component implements OnInit {
       this.pageList[i] = true;
     }
 
-    let body = document.getElementById('body');
+    const body = document.getElementById('body');
     this.subs.add(this.dragula.drag().subscribe((value) => {
-      body.style.overflowY = `hidden`
+      body.style.overflowY = `hidden`;
     }));
 
     this.subs.add(this.dragula.drop().subscribe(value => {
@@ -110,7 +110,7 @@ export class DialoguesExercise1Component implements OnInit {
       this.correct();
 
       setTimeout(() => {
-        this.msg = "";
+        this.msg = '';
       }, 1000);
     }));
   }
@@ -132,7 +132,7 @@ export class DialoguesExercise1Component implements OnInit {
     return;
   }
 
-  statDateObjects: any = {"correct": 0, "incorrect": 0, "total": this.jsonObject.page.length};
+  statDateObjects: any = {'correct': 0, 'incorrect': 0, 'total': this.jsonObject.page.length};
   pageList: boolean[] = new Array(this.statDateObjects.total);
 
   shuffle(array) {
@@ -160,8 +160,8 @@ export class DialoguesExercise1Component implements OnInit {
 
 
   correct() {
-    let right = new Audio(this.rightAudio);
-    let wrong = new Audio(this.wrongAudio);
+    const right = new Audio(this.rightAudio);
+    const wrong = new Audio(this.wrongAudio);
     this.divElements = document.getElementById('items').children;
     this.letters = this.mustPlay;
    // console.log(this.divElements);

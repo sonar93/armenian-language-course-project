@@ -4,7 +4,7 @@ import { SpeechRecognizerService } from './shared/services/speech-recognizer.ser
 import { SpeechNotification } from './shared/model/speech-notification';
 import { SpeechError } from './shared/model/speech-error';
 import { ActionContext } from './shared/model/strategy/action-context';
-import { Data } from '../../data.service';
+import { Data } from '../../../shared/data.service';
 
 @Component({
   selector: 'wsa-web-speech',

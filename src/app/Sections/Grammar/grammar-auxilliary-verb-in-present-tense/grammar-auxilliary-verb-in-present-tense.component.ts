@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { Data } from "../../data.service";
+import { Component, OnInit } from '@angular/core';
+import { Data } from '../../../shared/data.service';
 
 @Component({
-  selector: "app-grammar-auxilliary-verb-in-present-tense",
-  templateUrl: "./grammar-auxilliary-verb-in-present-tense.component.html",
-  styleUrls: ["./grammar-auxilliary-verb-in-present-tense.component.scss"]
+  selector: 'app-grammar-auxilliary-verb-in-present-tense',
+  templateUrl: './grammar-auxilliary-verb-in-present-tense.component.html',
+  styleUrls: ['./grammar-auxilliary-verb-in-present-tense.component.scss']
 })
 export class GrammarAuxilliaryVerbInPresentTenseComponent implements OnInit {
   jsonObject: any = {
@@ -12,7 +12,7 @@ export class GrammarAuxilliaryVerbInPresentTenseComponent implements OnInit {
     secondary_title: '',
     help: '<p>Listen and practice.</p>',
     info: '<p><b><font color=\"#c10300\">Եմ</font> auxiliary verb helps to form other different forms of the verb. It has present, past tense  forms<br></b></p><p style=\"text-align:center\"><b><font color=\"#c10300\">PRESENT TENSE</font></b></p><p></p><table style=\"border: 1px solid black\">          <tbody><tr>          <th>Singular</th>          <th>Plural</th>              </tr>             <tr>                 <td>1st person (գրում, խաղում) <b>եմ</b><br>                                  2nd person (գրում, խաղում) <b>ես</b><br>                                      3rd person (գրում, խաղում) <b>է </b>                      </td>              <td>  (գրում, խաղում) <b>ենք</b><br>                    (գրում, խաղում) <b>եք</b><br>                       (գրում, խաղում) <b>են</b>                 </td>           </tr>          </tbody></table><p style=\"text-align:center\"><b><font color=\"#c10300\">PAST TENSE</font></b></p><table align=\"center\">          <tbody><tr>          <th>Singular</th>          <th>Plural</th>              </tr>             <tr>                 <td style=\"border: 1px solid black\">                     1st person (գրում, խաղում) <b>էի</b><br>                                          2nd person (գրում, խաղում) <b>էիր</b><br>                                             3rd person (գրում, խաղում) <b>էր</b>                          </td>              <td style=\"border: 1px solid black\">                  (գրում, խաղում) <b>էինք</b><br>                   (գրում, խաղում) <b>էիք</b><br>                     (գրում, խաղում) <b>էին</b>                   </td>           </tr>          </tbody></table><p><b>As an independent <font color=\"#c10300\">եմ</font> verb is used in the meaning of <font color=\"#c10300\">լինել, գոյություն ունենալ</font> / to be, to exist.</b></p>',
-   
+
     page: [
       {
         meaning: ['1st person',
@@ -143,9 +143,9 @@ export class GrammarAuxilliaryVerbInPresentTenseComponent implements OnInit {
   }
 
   getData() {
-    let course_id = 'AL_102';
-    let lesson_id = 'Lesson_1';
-    let item_id = '11';
+    const course_id = 'AL_102';
+    const lesson_id = 'Lesson_1';
+    const item_id = '11';
     // console.log('course_id =' + course_id);
     // console.log('kuku');
     // this.jsonData.getJson(course_id,lesson_id,item_id).subscribe(responseAlp => this.jsonObject = responseAlp);

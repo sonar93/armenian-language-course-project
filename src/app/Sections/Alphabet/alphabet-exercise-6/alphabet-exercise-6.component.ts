@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DragulaService } from "ng2-dragula";
 import { Subscription } from 'rxjs/Subscription';
-import { Data } from "../../data.service";
+import { Data } from "../../../shared/data.service";
 
 @Component({
   selector: "app-alphabet-exercise-6",

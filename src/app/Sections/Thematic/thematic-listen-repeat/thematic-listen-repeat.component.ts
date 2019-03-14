@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Data } from "../../data.service";
+import { Data } from "../../../shared/data.service";
 import { HttpModule } from "@angular/http";
 import { HttpClient } from "@angular/common/http";
 @Component({

@@ -31,7 +31,12 @@ export class NotesComponent implements OnInit {
 
   getUserNote() {
     this.data.getNotes(this.type, this.course_id).subscribe(
-      response => { if ( response !== null) {this.userNote = response}; this.userNote.reverse()});
+      response => {
+        if (response !== null) {
+          this.userNote = response;
+        }
+        this.userNote.reverse();
+      });
     return;
   }
   color: any = ['#3F51B5', '#009688', '#9C27B0', '#FF5722', '#E91E63'];
